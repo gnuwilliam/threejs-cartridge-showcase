@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel build/index.html"
+    "dev": "parcel build/index.html",
+    "build": "parcel build build/index.html --public-url /gh-pages/ --out-dir gh-pages"
   },
   "dependencies": {
     "parcel-bundler": "^1.12.4",

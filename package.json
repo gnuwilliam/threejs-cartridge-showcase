@@ -1,0 +1,13 @@
+{
+  "name": "threejs-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel build/index.html"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "three": "^0.116.1"
+  }
+}

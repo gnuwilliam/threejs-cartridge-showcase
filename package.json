@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel build/index.html",
-    "build": "parcel build build/index.html --public-url /gh-pages/ --out-dir gh-pages"
+    "build": "parcel build build/index.html --public-url ./ --out-dir docs"
   },
   "dependencies": {
     "parcel-bundler": "^1.12.4",

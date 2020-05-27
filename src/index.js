@@ -1,9 +1,12 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
 import hulkImage from '../images/hulk.jpg';
 
 const canvas = document.getElementById('canvas');
 
 let camera;
+let controls;
 let scene;
 let renderer;
 
@@ -18,12 +21,7 @@ window.onload = () => {
 };
 
 const init = () => {
-  camera = new THREE.PerspectiveCamera(
-    70,
-    window.innerWidth / window.innerHeight,
-    0.01,
-    10
-  );
+  camera = new THREE.PerspectiveCamera(70, 1, 0.01, 10);
   camera.position.z = 1;
 
   scene = new THREE.Scene();
@@ -44,13 +42,15 @@ const init = () => {
 
   renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas });
   renderer.setClearColor(new THREE.Color('#1e202f'));
+
+  controls = new OrbitControls(camera, renderer.domElement);
+  controls.enablePan = false;
 };
 
 const animate = () => {
   requestAnimationFrame(animate);
 
-  mesh.rotation.x += 0.02;
-  mesh.rotation.y += 0.02;
+  controls.update();
 
   renderer.render(scene, camera);
 };
